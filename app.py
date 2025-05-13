@@ -2,7 +2,6 @@ import streamlit as st
 import numpy as np
 import joblib
 from xgboost import XGBClassifier
-import joblib
 xgb_model = XGBClassifier()
 joblib.dump(xgb_model, "xgb_model.pkl")
 model = joblib.load("xgb_model.pkl")
@@ -11,14 +10,14 @@ st.title("🛡️ Online Transaction Fraud Detection")
 st.write("Fill in transaction details to detect if it's fraudulent.")
 
 step = st.number_input("Step", min_value=0)
-amount = st.number_input("Amount", min_value=0.1)
+amount = st.number_input("Amount", min_value=0.0)
 oldbalanceOrg = st.number_input("Old Balance (Origin)", min_value=0.0)
 newbalanceOrig = st.number_input("New Balance (Origin)", min_value=0.0)
 oldbalanceDest = st.number_input("Old Balance (Destination)", min_value=0.0)
 
 if st.button("Predict"):
     input_data = np.array([[step, amount, oldbalanceOrg, newbalanceOrig, oldbalanceDest]])
-    prediction = xgb_model.predict(input_data)[0]
+    prediction = model.predict(input_data)[0]
     if prediction == 1:
         st.error("🚨 Fraud Detected!")
     else:
