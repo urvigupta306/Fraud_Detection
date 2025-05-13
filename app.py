@@ -1,9 +1,3 @@
-from xgboost import XGBClassifier
-import joblib
-xgb_model = XGBClassifier()
-joblib.dump(xgb_model, "xgb_model.pkl")
-model = joblib.load("xgb_model.pkl")
-
 import streamlit as st
 import numpy as np
 st.title("🛡️ Online Transaction Fraud Detection")
