@@ -1,14 +1,8 @@
 import streamlit as st
 import numpy as np
 import joblib
-import os
-MODEL_PATH = "xgb_model.pkl"
+joblib.load("xgb_model.pkl")
 
-if os.path.exists(MODEL_PATH):
-    model = joblib.load(MODEL_PATH)
-else:
-    st.error(f"❌ Model file '{MODEL_PATH}' not found in your repo. Please upload it.")
-    st.stop()
 st.title("🛡️ Online Transaction Fraud Detection")
 st.write("Fill in transaction details to detect if it's fraudulent.")
 
