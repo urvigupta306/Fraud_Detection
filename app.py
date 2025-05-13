@@ -18,7 +18,7 @@ newbalanceOrig = st.number_input("New Balance (Origin)", min_value=0.0)
 oldbalanceDest = st.number_input("Old Balance (Destination)", min_value=0.0)
 
 if st.button("Predict"):
-input_data = np.array([[step, amount, oldbalanceOrg, newbalanceOrig, oldbalanceDest]])
+ input_data = np.array([[step, amount, oldbalanceOrg, newbalanceOrig, oldbalanceDest]])
 prediction = model.predict(input_data)[0]
 if prediction == 1:
         st.error("🚨 Fraud Detected!")
