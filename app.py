@@ -14,7 +14,7 @@ st.title("🛡️ Online Transaction Fraud Detection")
 st.write("Fill in transaction details to detect if it's fraudulent.")
 
 step = st.number_input("Step", min_value=0)
-amount = st.number_input("Amount", min_value=0.0)
+amount = st.number_input("Amount", min_value=0.1)
 oldbalanceOrg = st.number_input("Old Balance (Origin)", min_value=0.0)
 newbalanceOrig = st.number_input("New Balance (Origin)", min_value=0.0)
 oldbalanceDest = st.number_input("Old Balance (Destination)", min_value=0.0)
