@@ -21,6 +21,6 @@ if st.button("Predict"):
 prediction = model.predict(input_data)[0]
 if prediction == 1:
         st.error("🚨 Fraud Detected!")
- else:
+else:
         st.success("✅ Safe Transaction")
 
