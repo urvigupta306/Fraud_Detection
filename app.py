@@ -1,10 +1,8 @@
-import os
-
 import streamlit as st
 import numpy as np
 import joblib
 from xgboost import XGBClassifier
-st.write("Files in current directory:", os.listdir())
+
 
 xgb_model = XGBClassifier()
 joblib.dump(xgb_model, "xgb_model.pkl")
