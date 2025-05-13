@@ -2,8 +2,6 @@ import streamlit as st
 import numpy as np
 import joblib
 from xgboost import XGBClassifier
-uploaded_file = st.file_uploader("xgb_model", type="pkl")
-
 
 xgb_model = XGBClassifier()
 joblib.dump(xgb_model, "xgb_model.pkl")
