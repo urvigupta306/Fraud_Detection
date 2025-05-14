@@ -3,7 +3,6 @@ import numpy as np
 import joblib
 from xgboost import XGBClassifier
 MODEL_PATH = "xgb_model (2).pkl"
-xgb_model (2) = XGBClassifier
 joblib.dump(xgb_model, "xgb_model (2).pkl")
 model = joblib.load("xgb_model (2).pkl")
 
